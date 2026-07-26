@@ -5,12 +5,6 @@
   "buildCommand": "npm run vercel-build --prefix ..",
   "outputDirectory": "dist",
   "framework": null,
-  "functions": {
-    "api/**/*.ts": {
-      "maxDuration": 30,
-      "includeFiles": "api/**"
-    }
-  },
   "rewrites": [
     {
       "source": "/favicon.ico",
