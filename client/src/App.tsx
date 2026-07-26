@@ -2,13 +2,19 @@ import { useCallback, useEffect, useState } from 'react';
 import { Bounce, ToastContainer } from 'react-toastify';
 import { AppNavigationProvider } from './context/AppNavigationContext';
 import {
+  ADMIN_LOGIN_PATH,
+  ADMIN_PATH,
   HOME_PATH,
+  isAdminPath,
   isCardDownloadPath,
   isCardVerifyPath,
   isTermsPath,
   readCardDownloadToken,
   TERMS_PATH,
 } from './config/routes';
+import { adminMe, clearAdminToken, getAdminToken } from './api/admin';
+import { AdminDashboardPage } from './pages/AdminDashboardPage';
+import { AdminLoginPage } from './pages/AdminLoginPage';
 import { CardDownloadPage } from './pages/CardDownloadPage';
 import { CardVerifyPage } from './pages/CardVerifyPage';
 import { MemberCardLookupPage } from './pages/MemberCardLookupPage';
@@ -28,6 +34,8 @@ function resolveInitialFlow(): ActiveFlow {
 function App() {
   const [activeFlow, setActiveFlow] = useState<ActiveFlow>(resolveInitialFlow);
   const [showTerms, setShowTerms] = useState(() => isTermsPath(window.location.pathname));
+  const [adminAuthed, setAdminAuthed] = useState<boolean | null>(null);
+  const [adminPath, setAdminPath] = useState(() => isAdminPath(window.location.pathname));
   const cardDownloadToken = isCardDownloadPath(window.location.pathname)
     ? readCardDownloadToken(window.location.search)
     : null;
@@ -36,12 +44,13 @@ function App() {
     : null;
 
   useEffect(() => {
-    const syncTermsVisibility = () => {
+    const syncRouteState = () => {
       setShowTerms(isTermsPath(window.location.pathname));
+      setAdminPath(isAdminPath(window.location.pathname));
     };
 
-    window.addEventListener('popstate', syncTermsVisibility);
-    return () => window.removeEventListener('popstate', syncTermsVisibility);
+    window.addEventListener('popstate', syncRouteState);
+    return () => window.removeEventListener('popstate', syncRouteState);
   }, []);
 
   useEffect(() => {
@@ -49,6 +58,27 @@ function App() {
       setActiveFlow('registration');
     }
   }, []);
+
+  useEffect(() => {
+    if (!adminPath) {
+      setAdminAuthed(null);
+      return;
+    }
+
+    let cancelled = false;
+    void (async () => {
+      if (!getAdminToken()) {
+        if (!cancelled) setAdminAuthed(false);
+        return;
+      }
+      const ok = await adminMe();
+      if (!cancelled) setAdminAuthed(ok);
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [adminPath]);
 
   const openTerms = useCallback(() => {
     if (!isTermsPath(window.location.pathname)) {
@@ -72,7 +102,39 @@ function App() {
     setShowTerms(false);
   }, []);
 
+  const enterAdmin = useCallback(() => {
+    history.replaceState({}, '', ADMIN_PATH);
+    setAdminPath(true);
+    setAdminAuthed(true);
+  }, []);
+
+  const leaveAdmin = useCallback(() => {
+    clearAdminToken();
+    history.replaceState({}, '', ADMIN_LOGIN_PATH);
+    setAdminAuthed(false);
+    setAdminPath(true);
+  }, []);
+
   const renderMainScreen = () => {
+    if (adminPath) {
+      if (adminAuthed === null) {
+        return <div className="admin-login">Chargement…</div>;
+      }
+
+      if (!adminAuthed) {
+        if (window.location.pathname !== ADMIN_LOGIN_PATH && window.location.pathname !== `${ADMIN_LOGIN_PATH}/`) {
+          history.replaceState({}, '', ADMIN_LOGIN_PATH);
+        }
+        return <AdminLoginPage onSuccess={enterAdmin} />;
+      }
+
+      if (window.location.pathname === ADMIN_LOGIN_PATH || window.location.pathname === `${ADMIN_LOGIN_PATH}/`) {
+        history.replaceState({}, '', ADMIN_PATH);
+      }
+
+      return <AdminDashboardPage onLogout={leaveAdmin} />;
+    }
+
     if (isCardVerifyPath(window.location.pathname)) {
       return <CardVerifyPage token={cardVerifyToken ?? ''} />;
     }

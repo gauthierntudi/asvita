@@ -35,9 +35,11 @@ model Supporter {
   socialTt         String?           @map("social_tt")
   memberNumber     String?           @unique @map("member_number")
   createdAt        DateTime          @default(now()) @map("created_at")
+  deletedAt        DateTime?         @map("deleted_at")
   invoice          Invoice?
   purchaseHistory  PurchaseHistory[]
 
+  @@index([deletedAt])
   @@map("supporters")
 }
 

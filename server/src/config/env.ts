@@ -76,6 +76,10 @@ export const env = {
     senderAddress: process.env.ORANGE_SMS_SENDER_ADDRESS?.trim() ?? '',
     senderName: process.env.ORANGE_SMS_SENDER_NAME?.trim() ?? '',
   },
+  admin: {
+    passwordHash: process.env.ADMIN_PASSWORD_HASH?.trim() ?? '',
+    jwtSecret: process.env.JWT_SECRET?.trim() || 'change-me-in-production',
+  },
 } as const;
 
 export const flexpayCallbackUrl = `${env.appUrl}/api/webhooks/flexpay`;

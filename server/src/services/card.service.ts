@@ -164,6 +164,7 @@ async function loadPaidSupporterByToken(token: string) {
     where: {
       id: parsed.supporterId,
       memberNumber: parsed.memberNumber,
+      deletedAt: null,
       invoice: { status: 'paid' },
     },
     select: {
@@ -196,12 +197,19 @@ async function loadPaidSupporterByOrder(paymentKey: string) {
           section: true,
           memberNumber: true,
           memberType: true,
+          deletedAt: true,
         },
       },
     },
   });
 
-  return invoice?.supporter ?? null;
+  const supporter = invoice?.supporter ?? null;
+  if (!supporter || supporter.deletedAt) {
+    return null;
+  }
+
+  const { deletedAt: _deletedAt, ...safe } = supporter;
+  return safe;
 }
 
 async function loadPaidSupporterByFanId(fanId: string) {
@@ -215,6 +223,7 @@ async function loadPaidSupporterByFanId(fanId: string) {
   return prisma.supporter.findFirst({
     where: {
       memberNumber: { in: candidates },
+      deletedAt: null,
       invoice: { status: 'paid' },
     },
     select: {

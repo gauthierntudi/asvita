@@ -30,6 +30,7 @@ export async function upsertSupporter(
       data: {
         ...data,
         phone: normalizedPhone,
+        deletedAt: null,
       },
     });
     return existing.id;
@@ -55,7 +56,10 @@ export async function checkPhone(phone: string) {
   }
 
   const supporter = await prisma.supporter.findFirst({
-    where: { phone: { in: phoneLookupVariants(phone) } },
+    where: {
+      phone: { in: phoneLookupVariants(phone) },
+      deletedAt: null,
+    },
   });
 
   if (!supporter) {

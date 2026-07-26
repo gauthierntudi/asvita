@@ -66,8 +66,15 @@ Tables migrées depuis ASVITA :
 1. Porter les 5 étapes du formulaire (`index.html` → composants React)
 2. Implémenter les routes API : drafts, check-phone, payments, callback
 3. Brancher FlexPay + Twilio
-4. Admin React ou API séparée
+4. Admin : `/admin` (login JWT + liste supporters)
+5. Brancher FlexPay + Twilio
 
 ## Variables d'environnement
 
 Voir `.env.example` (Neon, FlexPay, Twilio, JWT admin).
+
+### Accès admin
+
+1. Renseigner `ADMIN_PASSWORD_HASH` (bcrypt) et `JWT_SECRET` dans `.env`
+2. Ouvrir `/admin` (ou `/admin/login`)
+3. Se connecter avec le mot de passe admin
