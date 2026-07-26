@@ -24,6 +24,7 @@ server/node_modules/.prisma
 
 # Vite
 client/dist
+client/api
 
 api/prisma-engine.so
 api/_dist/

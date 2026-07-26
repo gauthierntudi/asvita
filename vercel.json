@@ -8,7 +8,7 @@
   "functions": {
     "api/**/*.ts": {
       "maxDuration": 30,
-      "includeFiles": "api/**,node_modules/@resvg/**,node_modules/qrcode/**"
+      "includeFiles": "api/**"
     }
   },
   "rewrites": [
