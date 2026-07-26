@@ -22,12 +22,12 @@ export function CardDownloadPage({ token }: CardDownloadPageProps) {
 
     try {
       const blob = await fetchCardBlob({ token });
-      saveCardBlob(blob, 'carte-simba.png');
+      saveCardBlob(blob, 'carte-vita.png');
       setStatus('success');
       setMessage(
         isIosDevice()
           ? 'Votre carte est prête. Sur iPhone, elle s’ouvre dans un nouvel onglet : appuyez longuement sur l’image puis « Ajouter à Photos » ou « Enregistrer ».'
-          : 'Votre carte a été téléchargée. Bienvenue dans la famille AS Simba Kamikazes !',
+          : 'Votre carte a été téléchargée. Bienvenue dans la famille AS Vita Club !',
       );
     } catch {
       setStatus('error');

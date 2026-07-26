@@ -1,5 +1,5 @@
 {
-  "name": "simba-api-runtime",
+  "name": "asvita-api-runtime",
   "private": true,
   "type": "module",
   "dependencies": {

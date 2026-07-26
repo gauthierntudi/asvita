@@ -1,13 +1,13 @@
-# simba-react
+# asvita
 
-Migration **AS Simba** (inscription supporter) vers **React + Node + PostgreSQL (Neon)** avec **Prisma**.
+Migration **AS Vita** (inscription supporter) vers **React + Node + PostgreSQL (Neon)** avec **Prisma**.
 
-Sous-projet React du dossier **ASSIMBA** (remplace progressivement le frontend PHP/HTML).
+Sous-projet React du dossier **ASVITA** (remplace progressivement le frontend PHP/HTML).
 
 ## Structure
 
 ```
-simba-react/
+asvita/
 ├── client/          # React (Vite + TypeScript)
 ├── server/          # API Express + Prisma Client
 ├── prisma/          # Schéma PostgreSQL (Neon)
@@ -22,7 +22,7 @@ simba-react/
 ## Installation
 
 ```bash
-cd simba-react
+cd asvita
 cp .env.example .env
 cp client/.env.example client/.env
 
@@ -56,7 +56,7 @@ npm run dev
 
 ## Schéma Prisma
 
-Tables migrées depuis ASSIMBA :
+Tables migrées depuis ASVITA :
 
 - `supporters` — profil supporter
 - `invoices` — factures / paiements FlexPay

@@ -12,17 +12,17 @@ import { renderSvgToPng } from './card-renderer.js';
 
 const CARD_WIDTH = 1003;
 const CARD_HEIGHT = 649;
-const VALUE_X = 252;
-const FIELD_FONT_SIZE = 30;
-const TEXT_Y_OFFSET = 2.4;
-const STANDARD_TEXT_COLOR = '#d00404';
+/** Juste après la colonne des « : » alignés sur les nouveaux templates. */
+const VALUE_X = 268;
+const FIELD_FONT_SIZE = 28;
+const STANDARD_TEXT_COLOR = '#0e611a';
 const PREMIUM_TEXT_COLOR = '#ffffff';
 
-// Calibré sur le cadre blanc des templates standard/premium (1003×649).
+// Calibré sur le cadre QR des templates standard/premium (1003×649).
 const QR_PLACEMENT = {
-  left: 776,
-  top: 388,
-  size: 186,
+  left: 782,
+  top: 405,
+  size: 170,
 };
 
 type CardFieldLayout = {
@@ -47,22 +47,22 @@ type CardLayout = {
 const STANDARD_LAYOUT: CardLayout = {
   template: 'standard.png',
   fields: {
-    lastname: { x: VALUE_X, y: 303 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 22 },
-    postname: { x: VALUE_X, y: 343 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 22 },
-    firstname: { x: VALUE_X, y: 383 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 22 },
-    fanId: { x: VALUE_X, y: 462 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 16 },
-    section: { x: VALUE_X, y: 501 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 24 },
+    lastname: { x: VALUE_X, y: 327, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 22 },
+    postname: { x: VALUE_X, y: 368, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 22 },
+    firstname: { x: VALUE_X, y: 407, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 22 },
+    fanId: { x: VALUE_X, y: 494, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 16 },
+    section: { x: VALUE_X, y: 532, size: FIELD_FONT_SIZE, color: STANDARD_TEXT_COLOR, maxChars: 24 },
   },
 };
 
 const PREMIUM_LAYOUT: CardLayout = {
   template: 'premium.png',
   fields: {
-    lastname: { x: VALUE_X, y: 303 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 22 },
-    postname: { x: VALUE_X, y: 343 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 22 },
-    firstname: { x: VALUE_X, y: 383 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 22 },
-    fanId: { x: VALUE_X, y: 462 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 16 },
-    section: { x: VALUE_X, y: 501 + TEXT_Y_OFFSET, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 24 },
+    lastname: { x: VALUE_X, y: 315, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 22 },
+    postname: { x: VALUE_X, y: 356, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 22 },
+    firstname: { x: VALUE_X, y: 397, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 22 },
+    fanId: { x: VALUE_X, y: 475, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 16 },
+    section: { x: VALUE_X, y: 516, size: FIELD_FONT_SIZE, color: PREMIUM_TEXT_COLOR, maxChars: 24 },
   },
 };
 
@@ -291,7 +291,7 @@ export async function getCardDownloadByToken(token: string) {
 
   return {
     buffer,
-    filename: `carte-simba-${supporter.memberNumber}.png`,
+    filename: `carte-vita-${supporter.memberNumber}.png`,
     memberNumber: supporter.memberNumber,
   };
 }
@@ -306,7 +306,7 @@ export async function getCardDownloadByOrder(paymentKey: string) {
 
   return {
     buffer,
-    filename: `carte-simba-${supporter.memberNumber}.png`,
+    filename: `carte-vita-${supporter.memberNumber}.png`,
     memberNumber: supporter.memberNumber,
     token: createCardDownloadToken(supporter.id, supporter.memberNumber),
   };
@@ -322,7 +322,7 @@ export async function getCardDownloadByFanId(fanId: string) {
 
   return {
     buffer,
-    filename: `carte-simba-${supporter.memberNumber}.png`,
+    filename: `carte-vita-${supporter.memberNumber}.png`,
     memberNumber: supporter.memberNumber,
   };
 }

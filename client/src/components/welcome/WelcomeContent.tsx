@@ -10,21 +10,14 @@ export function WelcomeContent({ onStart }: WelcomeContentProps) {
   return (
     <>
       <div className="welcome-main">
-        <img
-          className="welcome-logo welcome-logo--small"
-          src="/img/lualaba.png"
-          alt=""
-          aria-hidden="true"
-        />
-
         <div className="welcome-hero">
-          <img className="welcome-logo welcome-logo--large" src="/img/logo-new.png" alt="AS Simba" />
+          <img className="welcome-logo welcome-logo--large" src="/img/logo-new.png" alt="AS Vita" />
           <h1 className="welcome-title">
-            AS SIMBA
+            AS VITA
             <br />
-            KAMIKAZES
+            Club
           </h1>
-          <p className="welcome-founded">Fondée en 1939</p>
+          <p className="welcome-founded">Fondée en 1935</p>
         </div>
 
         <div className="welcome-tagline-group">

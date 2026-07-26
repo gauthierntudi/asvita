@@ -22,13 +22,13 @@ export function WelcomeDesktopPage({ onStart }: WelcomeDesktopPageProps) {
         </div>
 
         <div className="welcome-desktop-aside__content">
-          <img className="welcome-desktop-aside__logo" src="/img/logo-new.png" alt="AS Simba" />
+          <img className="welcome-desktop-aside__logo" src="/img/logo-new.png" alt="AS Vita" />
           <h1 className="welcome-desktop-aside__title">
-            AS SIMBA
+            AS VITA
             <br />
-            KAMIKAZES
+            Club
           </h1>
-          <p className="welcome-desktop-aside__founded">Fondée en 1939</p>
+          <p className="welcome-desktop-aside__founded">Fondée en 1935</p>
           <p className="welcome-desktop-aside__tagline">Rejoignez la famille</p>
         </div>
       </aside>
@@ -52,7 +52,7 @@ export function WelcomeDesktopPage({ onStart }: WelcomeDesktopPageProps) {
           </div>
 
           <div className="welcome-desktop-card__visual">
-            <img src="/img/img01.jpg" alt="Supporters AS Simba" />
+            <img src="/img/img01.jpg" alt="Supporters AS Vita" />
           </div>
 
           <div className="welcome-desktop-card__actions">

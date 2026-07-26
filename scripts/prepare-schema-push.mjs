@@ -8,6 +8,18 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+async function tableExists(table) {
+  const rows = await prisma.$queryRaw`
+    SELECT 1
+    FROM information_schema.tables
+    WHERE table_schema = 'public'
+      AND table_name = ${table}
+    LIMIT 1
+  `;
+
+  return rows.length > 0;
+}
+
 async function columnExists(table, column) {
   const rows = await prisma.$queryRaw`
     SELECT 1
@@ -22,6 +34,11 @@ async function columnExists(table, column) {
 }
 
 async function ensureInvoiceUpdatedAt() {
+  // DB fraîche : prisma db push créera les tables — rien à préparer.
+  if (!(await tableExists('invoices'))) {
+    return;
+  }
+
   if (await columnExists('invoices', 'updated_at')) {
     return;
   }

@@ -4,7 +4,7 @@ body.payment-result-desktop-active {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #1c1412;
+  background: #102412;
 }
 
 .payment-result-desktop-screen {
@@ -14,7 +14,7 @@ body.payment-result-desktop-active {
   display: grid;
   grid-template-columns: minmax(360px, 42%) 1fr;
   min-height: 100dvh;
-  background: #1c1412;
+  background: #102412;
 }
 
 .payment-result-desktop-aside {
@@ -25,20 +25,14 @@ body.payment-result-desktop-active {
 .payment-result-desktop-aside__photo {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(120, 0, 0, 0.55) 0%,
-      rgba(90, 0, 0, 0.78) 55%,
-      rgba(40, 0, 0, 0.95) 100%
-    ),
-    url('/img/bg-start.jpg') center / cover no-repeat;
+  background: url('/img/bg-start.jpg') center / cover no-repeat;
 }
 
 .payment-result-desktop-aside__veil {
   position: absolute;
   inset: 0;
-  background: rgba(8, 6, 5, 0.22);
+  background: linear-gradient(180deg, #16341a 0%, #000000 100%);
+  opacity: 0.88;
 }
 
 .payment-result-desktop-main {
@@ -47,6 +41,7 @@ body.payment-result-desktop-active {
   justify-content: center;
   padding: 40px;
   box-sizing: border-box;
+  background: #1c2e1e;
 }
 
 .payment-result-desktop-card {
@@ -64,6 +59,22 @@ body.payment-result-desktop-active {
   max-width: none;
 }
 
+.payment-result-desktop-card .payment-result-title {
+  color: #102412;
+}
+
+.payment-result-desktop-card .payment-result-message {
+  color: #1c2e1e;
+}
+
+.payment-result-desktop-card .payment-result-reference {
+  color: #4a6350;
+}
+
+.payment-result-desktop-card .payment-result-reference strong {
+  color: #2c8a39;
+}
+
 .payment-result-desktop-card .payment-result-actions {
   padding-top: 24px;
 }
@@ -72,4 +83,13 @@ body.payment-result-desktop-active {
   margin-top: 24px;
   padding-top: 16px;
   border-top: 1px solid #e2ddd9;
+}
+
+.payment-result-desktop-card .payment-result-footer__link,
+.payment-result-desktop-card .payment-result-footer__credit {
+  color: #2c8a39;
+}
+
+.payment-result-desktop-card .payment-result-footer__link:hover {
+  color: #236e2d;
 }

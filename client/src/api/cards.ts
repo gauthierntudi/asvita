@@ -41,7 +41,7 @@ export async function fetchCardBlob(
   return response.blob();
 }
 
-export function saveCardBlob(blob: Blob, filename = 'carte-simba.png'): void {
+export function saveCardBlob(blob: Blob, filename = 'carte-vita.png'): void {
   const objectUrl = URL.createObjectURL(blob);
 
   if (isIosDevice()) {
@@ -73,13 +73,13 @@ export function saveCardBlob(blob: Blob, filename = 'carte-simba.png'): void {
 
 export async function fetchAndDownloadCard(
   params: { token?: string; order?: string; fanId?: string },
-  filename = 'carte-simba.png',
+  filename = 'carte-vita.png',
 ): Promise<void> {
   const blob = await fetchCardBlob(params);
   saveCardBlob(blob, filename);
 }
 
-export function downloadCardFromUrl(url: string, filename = 'carte-simba.png'): void {
+export function downloadCardFromUrl(url: string, filename = 'carte-vita.png'): void {
   const link = document.createElement('a');
   link.href = url;
   link.download = filename;

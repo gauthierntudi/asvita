@@ -1,16 +1,16 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: simba-postgres
+    container_name: asvita-postgres
     restart: unless-stopped
     ports:
       - '5432:5432'
     environment:
-      POSTGRES_USER: simba
-      POSTGRES_PASSWORD: simba
-      POSTGRES_DB: simba
+      POSTGRES_USER: asvita
+      POSTGRES_PASSWORD: asvita
+      POSTGRES_DB: asvita
     volumes:
-      - simba_pg_data:/var/lib/postgresql/data
+      - asvita_pg_data:/var/lib/postgresql/data
 
 volumes:
-  simba_pg_data:
+  asvita_pg_data:

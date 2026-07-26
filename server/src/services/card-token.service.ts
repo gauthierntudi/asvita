@@ -5,7 +5,7 @@ function signingSecret(): string {
   return (
     process.env.CARD_DOWNLOAD_SECRET?.trim() ||
     env.flexpay.token ||
-    'simba-card-dev-secret'
+    'asvita-card-dev-secret'
   );
 }
 

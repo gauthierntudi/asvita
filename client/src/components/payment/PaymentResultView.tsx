@@ -14,7 +14,7 @@ const SUCCESS_MESSAGE = (
     <br />
     Bienvenue dans la famille
     <br />
-    AS Simba Kamikazes !
+    AS Vita Club !
   </>
 );
 

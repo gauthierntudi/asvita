@@ -18,9 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/api/health', async (_req, res) => {
   try {
     await prisma.$queryRaw`SELECT 1`;
-    res.json({ ok: true, service: 'simba-api' });
+    res.json({ ok: true, service: 'asvita-api' });
   } catch {
-    res.status(503).json({ ok: false, service: 'simba-api', database: 'unavailable' });
+    res.status(503).json({ ok: false, service: 'asvita-api', database: 'unavailable' });
   }
 });
 

@@ -28,18 +28,18 @@ export function TermsPage() {
 
           <article className="terms-article">
             <h1 className="terms-title">Conditions générales d&apos;utilisation (CGU)</h1>
-            <p className="terms-subtitle">Plateforme Simba Connect</p>
+            <p className="terms-subtitle">Plateforme Vita Connect</p>
             <p className="terms-meta">Dernière mise à jour : Juin 2026</p>
 
             <section>
               <h2>1. Présentation</h2>
               <p>
-                La plateforme Simba Connect est exploitée par Aksys Digital SAS, société de droit
+                La plateforme Vita Connect est exploitée par Aksys Digital SAS, société de droit
                 congolais ayant son siège à Kinshasa, République Démocratique du Congo.
               </p>
               <p>
                 La plateforme est mise à la disposition des supporters de l&apos;Association Sportive
-                Simba dans le cadre d&apos;un partenariat conclu entre le Club et Aksys Digital SAS.
+                Vita dans le cadre d&apos;un partenariat conclu entre le Club et Aksys Digital SAS.
               </p>
               <p>
                 L&apos;utilisation de la plateforme implique l&apos;acceptation pleine et entière des
@@ -50,7 +50,7 @@ export function TermsPage() {
             <section>
               <h2>2. Objet de la plateforme</h2>
               <p>
-                Simba Connect a pour objet de permettre l&apos;identification, l&apos;enregistrement et
+                Vita Connect a pour objet de permettre l&apos;identification, l&apos;enregistrement et
                 la gestion des supporters du Club à travers l&apos;attribution d&apos;un Numéro Supporter
                 Officiel ainsi que l&apos;émission de cartes digitales ou physiques permettant leur
                 identification au sein de la communauté du Club.

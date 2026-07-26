@@ -3,7 +3,7 @@
 body.card-download-active {
   padding: 0;
   overflow: hidden;
-  background: #830606;
+  background: #102412;
 }
 
 .card-download-screen {
@@ -144,7 +144,7 @@ body.card-download-active {
 .card-download-status__glyph {
   width: 48px;
   height: 48px;
-  color: #ed0505;
+  color: #2c8a39;
 }
 
 .card-download-status__glyph--error {

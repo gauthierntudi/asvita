@@ -30,20 +30,14 @@ body.welcome-desktop-active {
 .welcome-desktop-aside__photo {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(120, 0, 0, 0.78) 0%,
-      rgba(90, 0, 0, 0.88) 45%,
-      rgba(40, 0, 0, 0.97) 100%
-    ),
-    url('/img/bg-start.jpg') center / cover no-repeat;
+  background: url('/img/bg-start.jpg') center / cover no-repeat;
 }
 
 .welcome-desktop-aside__veil {
   position: absolute;
   inset: 0;
-  background: rgba(8, 6, 5, 0.28);
+  background: linear-gradient(180deg, #16341a 0%, #000000 100%);
+  opacity: 0.88;
 }
 
 .welcome-desktop-aside__content {
@@ -84,7 +78,7 @@ body.welcome-desktop-active {
 
 .welcome-desktop-aside__tagline {
   margin: 0;
-  color: #fff;
+  color: #efe205;
   font-family: 'Instrument Sans', 'Barlow', sans-serif;
   font-size: 28px;
   font-weight: 700;
@@ -100,7 +94,7 @@ body.welcome-desktop-active {
   padding: 40px;
   box-sizing: border-box;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(88, 0, 0, 0.92) 0%, rgba(58, 0, 0, 0.97) 100%);
+  background: #1c2e1e;
 }
 
 .welcome-desktop-main__bg {
@@ -186,7 +180,7 @@ body.welcome-desktop-active {
   padding: 14px 24px;
   border: none;
   border-radius: 24px;
-  background: #cd0404;
+  background: #2c8a39;
   color: #fff;
   font-family: 'Inter', 'Barlow', sans-serif;
   font-size: 17px;
@@ -197,7 +191,7 @@ body.welcome-desktop-active {
 
 .welcome-desktop-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(205, 4, 4, 0.35);
+  box-shadow: 0 8px 24px rgba(44, 138, 57, 0.35);
 }
 
 .welcome-desktop-cta-icon {
@@ -208,7 +202,7 @@ body.welcome-desktop-active {
   height: 48px;
   border: none;
   border-radius: 9999px;
-  background: #cd0404;
+  background: #2c8a39;
   color: #fff;
   cursor: pointer;
 }
@@ -224,7 +218,7 @@ body.welcome-desktop-active {
 
 .welcome-desktop-footer__link,
 .welcome-desktop-footer__credit {
-  color: #cd0404;
+  color: #2c8a39;
   font-family: 'Inter', 'Barlow', sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -237,5 +231,5 @@ body.welcome-desktop-active {
 }
 
 .welcome-desktop-footer__link:hover {
-  color: #a50303;
+  color: #236e2d;
 }

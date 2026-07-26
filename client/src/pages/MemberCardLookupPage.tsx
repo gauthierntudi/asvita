@@ -23,7 +23,7 @@ export function MemberCardLookupPage() {
     try {
       await fetchAndDownloadCard(
         { fanId: normalized },
-        `carte-simba-${normalized.padStart(8, '0')}.png`,
+        `carte-vita-${normalized.padStart(8, '0')}.png`,
       );
     } catch (caught) {
       const message =
@@ -42,7 +42,7 @@ export function MemberCardLookupPage() {
         <img
           className="card-download-intro__logo"
           src="/img/logo-new.png"
-          alt="AS Simba"
+          alt="AS Vita"
         />
         <h1 className="reg-mobile__title">Télécharger ma carte</h1>
         <p className="reg-mobile__subtitle">

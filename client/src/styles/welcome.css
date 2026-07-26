@@ -1,4 +1,4 @@
-/* Écran d'accueil mobile — Figma export AS SIMBA KAMIKAZES */
+/* Écran d'accueil mobile — AS Vita Club */
 
 body.welcome-active {
   padding: 0;
@@ -30,11 +30,12 @@ body.welcome-active {
 
 @media (max-width: 767px) {
   .welcome-content {
-    padding: max(32px, env(safe-area-inset-top)) 15px max(20px, env(safe-area-inset-bottom));
+    padding: max(28px, env(safe-area-inset-top)) 15px max(16px, env(safe-area-inset-bottom));
+    gap: 10px;
   }
 
   .welcome-main {
-    margin-top: -4px;
+    margin-top: 0;
   }
 
   .welcome-logo--small {
@@ -48,7 +49,7 @@ body.welcome-active {
   }
 
   .welcome-hero {
-    margin-top: 4px;
+    margin-top: 0;
     gap: 0;
   }
 }
@@ -60,7 +61,8 @@ body.welcome-active {
   }
 
   .welcome-tagline-group {
-    margin-top: 14px;
+    margin-top: auto;
+    padding-top: 12px;
   }
 
   .welcome-carousel-dots {
@@ -88,7 +90,7 @@ body.welcome-active {
   height: 867px;
   left: -12px;
   top: -15px;
-  background: #a60000;
+  background: #16341a;
 }
 
 .welcome-bg__photo {
@@ -98,21 +100,14 @@ body.welcome-active {
   height: 100%;
   left: 0;
   top: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(120, 0, 0, 0.78) 0%,
-      rgba(90, 0, 0, 0.88) 40%,
-      rgba(40, 0, 0, 0.97) 100%
-    ),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.45) 100%),
-    url('/img/bg-start.jpg') center / cover no-repeat;
+  background: url('/img/bg-start.jpg') center / cover no-repeat;
 }
 
 .welcome-bg__veil {
   position: absolute;
   inset: 0;
-  background: rgba(8, 6, 5, 0.38);
+  background: linear-gradient(180deg, #16341a 0%, #000000 100%);
+  opacity: 0.88;
 }
 
 /* ── Content ── */
@@ -123,6 +118,8 @@ body.welcome-active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   min-height: 100%;
   height: 100%;
   max-height: 100%;
@@ -138,8 +135,11 @@ body.welcome-active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
-  margin-top: -8px;
+  margin-top: 0;
 }
 
 .welcome-bottom {
@@ -148,8 +148,8 @@ body.welcome-active {
   align-items: center;
   width: 100%;
   flex-shrink: 0;
-  margin-top: auto;
-  padding-top: 12px;
+  margin-top: 0;
+  padding-top: 4px;
 }
 
 .welcome-logo--small {
@@ -200,7 +200,8 @@ body.welcome-active {
 .welcome-tagline-group {
   width: 100%;
   max-width: 362px;
-  margin-top: 14px;
+  margin-top: auto;
+  padding-top: 16px;
   align-self: center;
 }
 
@@ -231,7 +232,7 @@ body.welcome-active {
   width: 100%;
   max-width: 362px;
   text-align: center;
-  color: #fff;
+  color: #efe205;
   font-family: 'Instrument Sans', 'Barlow', sans-serif;
   font-size: clamp(24px, 7vw, 32px);
   font-weight: 700;
@@ -307,8 +308,8 @@ body.welcome-active {
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.05) 35%,
-    rgba(88, 0, 0, 0.45) 68%,
-    rgba(40, 0, 0, 0.82) 100%
+    rgba(22, 52, 26, 0.45) 68%,
+    rgba(0, 0, 0, 0.82) 100%
   );
   pointer-events: none;
 }
@@ -419,7 +420,7 @@ body.welcome-active {
   right: 0;
   bottom: 0;
   height: 58px;
-  background: linear-gradient(180deg, rgba(236, 34, 31, 0.12) 0%, rgba(144, 11, 9, 0.72) 100%);
+  background: linear-gradient(180deg, rgba(22, 52, 26, 0.12) 0%, rgba(0, 0, 0, 0.72) 100%);
   border-bottom-left-radius: 11px;
   border-bottom-right-radius: 11px;
   pointer-events: none;
@@ -454,7 +455,7 @@ body.welcome-active {
   border: none;
   border-radius: 24px;
   background: #fff;
-  color: #4f0302;
+  color: #145019;
   font-family: 'Inter', 'Barlow', sans-serif;
   font-size: 17px;
   font-weight: 700;
@@ -473,7 +474,7 @@ body.welcome-active {
   border: none;
   border-radius: 9999px;
   background: #fff;
-  color: #4f0302;
+  color: #145019;
   font-family: 'Inter', 'Barlow', sans-serif;
   font-size: 22px;
   font-weight: 700;

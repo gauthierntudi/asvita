@@ -2,20 +2,20 @@ import type { Plugin } from 'vite';
 import { readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
-const CACHE_NAME = 'as-simba-v1';
+const CACHE_NAME = 'as-vita-v1';
 const ICON_DIR = join(process.cwd(), 'public/img/appiconset');
 
 const MANIFEST_BASE = {
-  name: 'AS Simba - Inscription Supporter',
-  short_name: 'AS Simba',
-  description: 'Inscription et engagement supporter AS Simba',
+  name: 'AS Vita - Inscription Supporter',
+  short_name: 'AS Vita',
+  description: 'Inscription et engagement supporter AS Vita',
   start_url: '/',
   scope: '/',
   display: 'standalone',
   orientation: 'portrait',
   lang: 'fr',
-  theme_color: '#1c1412',
-  background_color: '#1c1412',
+  theme_color: '#2c8a39',
+  background_color: '#1c2e1e',
   categories: ['sports', 'lifestyle'],
 };
 
@@ -72,9 +72,9 @@ function collectDistFiles(dir: string, base: string): string[] {
   return files;
 }
 
-export function asSimbaPwaPlugin(): Plugin {
+export function asVitaPwaPlugin(): Plugin {
   return {
-    name: 'as-simba-pwa',
+    name: 'as-vita-pwa',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         if (req.url?.split('?')[0] === '/manifest.webmanifest') {

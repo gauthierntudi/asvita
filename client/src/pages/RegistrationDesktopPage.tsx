@@ -26,15 +26,15 @@ export function RegistrationDesktopPage({ flow }: RegistrationDesktopPageProps) 
           <div className="reg-desktop-aside__veil" aria-hidden="true" />
           <img
             className="reg-desktop-aside__lion"
-            src="/img/Pattern_lion_as_simba.svg"
+            src="/img/Pattern_lion_as_vita.svg"
             alt=""
             aria-hidden="true"
           />
         </div>
 
         <div className="reg-desktop-aside__content">
-          <img className="reg-desktop-aside__logo" src="/img/logo-new.png" alt="AS Simba" />
-          <p className="reg-desktop-aside__brand">AS SIMBA KAMIKAZES</p>
+          <img className="reg-desktop-aside__logo" src="/img/logo-new.png" alt="AS Vita" />
+          <p className="reg-desktop-aside__brand">AS VITA Club</p>
           <p className="reg-desktop-aside__tagline">Rejoignez la famille</p>
           <DesktopStepNav currentStep={flow.currentStep} />
         </div>

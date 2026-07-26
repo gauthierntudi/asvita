@@ -4,7 +4,7 @@ body.terms-active {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #830606;
+  background: #102412;
 }
 
 .terms-screen {
@@ -162,7 +162,7 @@ body.terms-active {
 
 .terms-footer__link,
 .terms-footer__credit {
-  color: #cd0404;
+  color: #efe205;
   font-family: 'Inter', 'Barlow', sans-serif;
   font-size: 8px;
   font-weight: 600;

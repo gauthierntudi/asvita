@@ -4,7 +4,7 @@ body.reg-desktop-active {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #1c1412;
+  background: #102412;
 }
 
 .reg-desktop-screen {
@@ -14,7 +14,7 @@ body.reg-desktop-active {
   display: grid;
   grid-template-columns: minmax(360px, 42%) 1fr;
   min-height: 100dvh;
-  background: #1c1412;
+  background: #102412;
 }
 
 /* ── Aside (branding + stepper) ── */
@@ -36,20 +36,14 @@ body.reg-desktop-active {
 .reg-desktop-aside__photo {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(120, 0, 0, 0.55) 0%,
-      rgba(90, 0, 0, 0.78) 55%,
-      rgba(40, 0, 0, 0.95) 100%
-    ),
-    url('/img/bg-start.jpg') center / cover no-repeat;
+  background: url('/img/bg-start.jpg') center / cover no-repeat;
 }
 
 .reg-desktop-aside__veil {
   position: absolute;
   inset: 0;
-  background: rgba(8, 6, 5, 0.22);
+  background: linear-gradient(180deg, #16341a 0%, #000000 100%);
+  opacity: 0.88;
 }
 
 .reg-desktop-aside__lion {
@@ -89,7 +83,7 @@ body.reg-desktop-active {
 
 .reg-desktop-aside__tagline {
   margin: 0 0 40px;
-  color: rgba(255, 255, 255, 0.88);
+  color: #efe205;
   font-family: 'Inter', 'Barlow', sans-serif;
   font-size: 15px;
   font-weight: 500;
@@ -119,14 +113,14 @@ body.reg-desktop-active {
 }
 
 .reg-desktop__step--active {
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(44, 138, 57, 0.55);
+  background: rgba(44, 138, 57, 0.22);
   color: #fff;
 }
 
 .reg-desktop__step--done {
-  border-color: rgba(188, 72, 72, 0.55);
-  background: rgba(188, 72, 72, 0.18);
+  border-color: rgba(14, 97, 26, 0.65);
+  background: rgba(14, 97, 26, 0.28);
   color: #fff;
 }
 
@@ -144,11 +138,11 @@ body.reg-desktop-active {
 }
 
 .reg-desktop__step--active .reg-desktop__step-index {
-  background: #cd0404;
+  background: #2c8a39;
 }
 
 .reg-desktop__step--done .reg-desktop__step-index {
-  background: #bc4848;
+  background: #0e611a;
 }
 
 .reg-desktop__step-label {
@@ -166,7 +160,7 @@ body.reg-desktop-active {
   padding: 32px;
   box-sizing: border-box;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(88, 0, 0, 0.92) 0%, rgba(58, 0, 0, 0.97) 100%);
+  background: linear-gradient(180deg, #102412 0%, #0e611a 100%);
 }
 
 .reg-desktop-main__bg {

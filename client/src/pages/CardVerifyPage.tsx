@@ -39,7 +39,7 @@ export function CardVerifyPage({ token }: CardVerifyPageProps) {
           setCard(result);
           setStatus('valid');
           setMessage(
-            'Cette carte de supporter AS Simba Kamikazes est valide, authentique et en règle pour la saison 2025-2026.',
+            'Cette carte de supporter AS Vita Club est valide, authentique et en règle pour la saison 2025-2026.',
           );
         }
       } catch (caught) {

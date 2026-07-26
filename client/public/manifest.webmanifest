@@ -1,14 +1,14 @@
 {
-  "name": "AS Simba - Inscription Supporter",
-  "short_name": "AS Simba",
-  "description": "Inscription et engagement supporter AS Simba",
+  "name": "AS Vita - Inscription Supporter",
+  "short_name": "AS Vita",
+  "description": "Inscription et engagement supporter AS Vita",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "lang": "fr",
-  "theme_color": "#1c1412",
-  "background_color": "#1c1412",
+  "theme_color": "#2c8a39",
+  "background_color": "#1c2e1e",
   "categories": ["sports", "lifestyle"],
   "icons": []
 }

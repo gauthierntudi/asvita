@@ -3,15 +3,8 @@
 :root {
   --mobile-form-gradient: linear-gradient(
     180deg,
-    #830606 0%,
-    #830606 68%,
-    #962020 76%,
-    #ad3434 82%,
-    #c85a5a 87%,
-    #de8a8a 91%,
-    #efc0c0 94%,
-    #f7e8e8 97%,
-    #ffffff 100%
+    #102412 0%,
+    #0e611a 100%
   );
 }
 

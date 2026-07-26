@@ -10,7 +10,7 @@ export function SelectChevron({ className }: SelectChevronProps) {
       className={className}
       size={12}
       strokeWidth={2}
-      color="#c70405"
+      color="#2c8a39"
       aria-hidden="true"
     />
   );
